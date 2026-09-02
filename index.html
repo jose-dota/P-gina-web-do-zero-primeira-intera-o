@@ -2,21 +2,35 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Blog de comidinha</title>
-        <style> header{background-color: darkcyan;
-        color: rgb(14, 43, 43);
-    text-align: center;}
-        main{background-color:aqua;
-             color: darkslategrey;
-             max-width: 800x;
-             margin: 0 auto;
-             padding: 16px;
-        text-align: center;}
-        
-            
-            </style>
+        <style> 
+            header {
+                background-color: darkcyan;
+                color: rgb(14, 43, 43);
+                text-align: center;
+                padding: 10px;
+            }
+            main {
+                background-color: aqua;
+                color: darkslategrey;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 16px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+            img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+            .content {
+                text-align: left;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -24,8 +38,12 @@
             <p>Vou compartilhar conhecimentos sobre minhas receitas pessoais</p>
         </header>
         <main>
-            <img src="watermarked_img_5468707372673428669.jpg" alt="bolos e brownies do blog";
-            <h2>Meu primeiro post</h2>
-            <p>Por: José C.</p>
-            <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de culinária e curiosidades da área de gastronomia pessoal.</p>
+            <img src="jose.jpg" alt="Bolos e brownies do blog">
+            <div class="content">
+                <h2>Meu primeiro post</h2>
+                <p><strong>Por: José C.</strong></p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de culinária e curiosidades da área de gastronomia pessoal.</p>
+            </div>
         </main>
+    </body>
+</html>
