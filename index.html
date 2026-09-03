@@ -7,14 +7,14 @@
         <style> 
             header {
                 background-color: darkcyan;
-                color: rgb(14, 43, 43);
+                color: rgb(97, 6, 133);
                 text-align: center;
                 padding: 10px;
             }
             main {
-                background-color: aqua;
+                background-color: rgb(0, 124, 103);
                 color: darkslategrey;
-                max-width: 1000px;
+                max-width: 2000px;
                 margin: 0 auto;
                 padding: 16px;
                 display: flex;
@@ -22,10 +22,13 @@
                 gap: 16px;
             }
             img {
-                width: 80px;
-                height: 80px;
+                width: 90px;
+                height: 90px;
                 object-fit: cover;
                 border-radius: 8px;
+            }
+            .artigo-autor{
+                font-weight: bold;
             }
             .content {
                 text-align: left;
@@ -38,11 +41,12 @@
             <p>Vou compartilhar conhecimentos sobre minhas receitas pessoais</p>
         </header>
         <main>
-            <img src="jose.jpg" alt="Bolos e brownies do blog">
-            <div class="content">
+                <img src="jose.jpg" alt="Bolos e brownies do blog">
+                <div class="content">
                 <h2>Meu primeiro post</h2>
-                <p><strong>Por: José C.</strong></p>
+                <p class="artigo-autor">Por: José C.</p>
                 <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de culinária e curiosidades da área de gastronomia pessoal.</p>
+                <button>🧁</button>
             </div>
         </main>
     </body>
