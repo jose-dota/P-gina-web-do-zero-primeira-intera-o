@@ -1,88 +1,274 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Blog de comidinha</title>
-        <style> 
-            header {
-                background-color: #331818;
-                color: rgb(255, 255, 255);
-                text-align: center;
-                padding: 20px;
-            }
-            main {
-                background-color: rgb(83, 29, 7);
-                color: rgb(255, 255, 255);
-                max-width: 2000px;
-                margin: 0 auto;
-                padding: 16px;
-                display: flex;
-                align-items: center;
-                gap: 16px;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Culinária - Receitas Pessoais</title>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #241007; 
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #170904;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 2px solid #3d1b0d;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            color: #f39c12;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        article {
+            background-color: #3b1a0d;
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        img {
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .content h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.5rem;
+        }
+
+        .artigo-autor {
+            font-weight: 600;
+            color: #e0a96d;
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+        }
+
+        article.artigo-destaque {
+            border: 2px solid #f1c40f;
+            box-shadow: 0 0 20px rgba(241, 196, 15, 0.25);
+            background: linear-gradient(145deg, #4a2110 0%, #2e1308 100%);
+            position: relative;
+        }
+
+        .badge-destaque {
+            display: inline-block;
+            background-color: #f1c40f;
+            color: #1a0a03;
+            font-weight: bold;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .artigo-destaque h2 {
+            color: #f1c40f;
+        }
+        .caixa-receita {
+            background-color: rgba(0, 0, 0, 0.25);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+            border-left: 4px solid #f39c12;
+        }
+
+        .artigo-destaque .caixa-receita {
+            border-left-color: #f1c40f;
+        }
+
+        .caixa-receita h3 {
+            margin-top: 12px;
+            margin-bottom: 8px;
+            color: #f39c12;
+            font-size: 1.1rem;
+        }
+
+        .caixa-receita ul, 
+        .caixa-receita ol {
+            margin: 0 0 16px 0;
+            padding-left: 20px;
+        }
+
+        .caixa-receita li {
+            margin-bottom: 6px;
+        }
+
+        .botoes-reacao {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        button {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+         (max-width: 768px) {
             article {
-                display: flex;
+                flex-direction: column;
             }
             img {
-                width: 300px;
-                height: 300px;
-                object-fit: cover;
-                border-radius: 8px;
+                width: 100%;
+                height: 200px;
             }
-            .artigo-autor{
-                font-weight: bold;
-            }
-            .content {
-                text-align: left;
-            }
-            body {
-                background-color: brown}
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>Meu blog de receitas</h1>
-            <p>Vou compartilhar conhecimentos sobre minhas receitas pessoais</p>
-        </header>
-        <main>
-            <article>
-                <img src="jose.jpg" 
-                     alt="Bolos e brownies do blog">
-                <div class="content">
-                    <h2>Meu primeiro post</h2>
-                    <p class="artigo-autor">Por: José C.</p>
-                    <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de culinária e curiosidades da área de gastronomia pessoal.</p>
-                    <button>🧁<span>0</span></button>
-                    <button>🍪<span>0</span></button>
-                </div>
-            <article>
+        }
+    </style>
+</head>
+<body>
 
-            <article>
-                <img src="jose.jpg" 
-                     alt="Bolos e brownies do blog">
-        <div class="content">
-            <h2>Meu segundo post</h2>
-            <p class="artigo-autor">Por: José C.</p>
-            <p>...</p>
-            <button>🧁<span>0</span></button>
-            <button>🍪<span>0</span></button>
-        </div>
-            <article>
-        </main>
-    </body>
+    <header>
+        <h1>Meu Blog de Receitas</h1>
+        <p>Vou compartilhar conhecimentos sobre minhas receitas pessoais</p>
+    </header>
+
+    <main>
+        <article class="artigo-destaque">
+            <img src="jose.jpg" alt="Brownie do blog">
+            
+            <div class="content">
+                <h2>Brownie de Air Fryer Imperdível</h2>
+                <p class="artigo-autor">Por: José C.</p>
+                
+                <p>
+                    Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de culinária e curiosidades da área de gastronomia pessoal.
+                    E hoje vou ensinar a receita do meu delicioso brownie de Air Fryer!
+                </p>
+                <div class="caixa-receita">
+                    <h3>🍫 Ingredientes</h3>
+                    <ul>
+                        <li>2 colheres de sopa de manteiga derretida</li>
+                        <li>2 colheres de sopa de açúcar</li>
+                        <li>1 gema de ovo</li>
+                        <li>2 colheres de sopa de cacau em pó</li>
+                        <li>2 colheres de sopa de farinha de trigo</li>
+                        <li>1 pitada de sal</li>
+                        <li>Quadrados de chocolate picado para rechear (opcional)</li>
+                    </ul>
+
+                    <h3>🥣 Modo de Preparo</h3>
+                    <ol>
+                        <li>Preaqueça a air fryer a 160°C por 3 minutos.</li>
+                        <li>No próprio potinho que vai à air fryer, misture a manteiga derretida com o açúcar.</li>
+                        <li>Adicione a gema e mexa até incorporar bem.</li>
+                        <li>Junte o cacau em pó, a farinha de trigo e o sal, misturando até obter uma massa homogênea.</li>
+                        <li>Afunde os pedaços de chocolate no meio da massa.</li>
+                        <li>Asse a 160°C por 8 a 10 minutos (o topo deve estar firme e o centro levemente cremoso).</li>
+                    </ol>
+                </div>
+
+                <div class="botoes-reacao">
+                    <button>🧁 <span>0</span></button>
+                    <button>🍪 <span>0</span></button>
+                </div>
+            </div>
+        </article>
+        <article>
+            <img src="jo.jpg" alt="Bolo individual na air fryer">
+            
+            <div class="content">
+                <h2>Bolo Individual na Air Fryer</h2>
+                <p class="artigo-autor">Por: José C.</p>
+                <p>
+                    Meu segundo post aqui no blog! Hoje irei ensinar a minha receita prática de bolo individual feito na Air Fryer. É perfeita para matar a vontade de um docinho de forma rápida!
+                </p>
+                <div class="caixa-receita">
+                    <h3>🍰 Ingredientes</h3>
+                    <ul>
+                        <li>3 colheres de sopa de farinha de trigo</li>
+                        <li>2 colheres de sopa de açúcar</li>
+                        <li>1 colher de sopa de cacau em pó (50% ou 100%)</li>
+                        <li>1/2 colher de chá de fermento químico em pó</li>
+                        <li>1 pitada de sal</li>
+                        <li>3 colheres de sopa de leite</li>
+                        <li>1 colher de sopa de óleo (ou manteiga derretida)</li>
+                        <li>1/2 colher de chá de essência de baunilha (opcional)</li>
+                    </ul>
+
+                    <h3>🥣 Modo de Preparo</h3>
+                    <ol>
+                        <li><strong>Misture os secos:</strong> Em uma tigela pequena, junte a farinha, o açúcar, o cacau, o fermento e a pitada de sal. Misture bem com um garfo.</li>
+                        <li><strong>Adicione os líquidos:</strong> Adicione o leite, o óleo e a baunilha à mistura seca. Mexa suavemente até obter uma massa lisa e homogênea.</li>
+                        <li><strong>Prepare a forma:</strong> Unte levemente uma forminha individual de alumínio com óleo e polvilhe cacau em pó. Despeje a massa na forminha, ocupando no máximo 2/3 da altura para evitar vazamentos ao crescer.</li>
+                        <li><strong>Asse na Air Fryer:</strong> Pré-aqueça a Air Fryer a 160°C por 3 minutos. Acomode a forminha no cesto e asse a 160°C por 10 a 12 minutos.</li>
+                        <li><strong>Teste do palito:</strong> Espete um palito no centro do bolo; se sair limpo, está pronto. Deixe amornar por alguns minutos antes de servir.</li>
+                    </ol>
+                </div>
+                
+                <div class="botoes-reacao">
+                    <button>🧁 <span>0</span></button>
+                    <button>🍪 <span>0</span></button>
+                </div>
+            </div>
+        </article>
+    </main>
+
     <script>
         const botoes = document.querySelectorAll("button");
 
-        botoes.forEach( function(botao){
-            botao.addEventListener("click", botaoClicado);
-
-            function botaoClicado(){
+        botoes.forEach(function(botao) {
+            botao.addEventListener("click", function() {
                 console.log("fui clicado");
                 let texto = botao.querySelector("span");
                 texto.textContent++;
-            }
-        })
-
+            });
+        });
     </script>
+
+</body>
 </html>
