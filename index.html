@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Blog de Culinária - Receitas Pessoais</title>
+
     <style>
-        
         * {
             box-sizing: border-box;
         }
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #241007; 
+            background-color: #241007;
             color: #ffffff;
             margin: 0;
             line-height: 1.6;
@@ -57,6 +58,10 @@
             transition: transform 0.2s ease;
         }
 
+        article:hover {
+            transform: translateY(-3px);
+        }
+
         img {
             width: 260px;
             height: 260px;
@@ -83,10 +88,15 @@
             font-size: 0.9rem;
         }
 
+        /* Artigo em destaque */
         article.artigo-destaque {
             border: 2px solid #f1c40f;
             box-shadow: 0 0 20px rgba(241, 196, 15, 0.25);
-            background: linear-gradient(145deg, #4a2110 0%, #2e1308 100%);
+            background: linear-gradient(
+                145deg,
+                #4a2110 0%,
+                #2e1308 100%
+            );
             position: relative;
         }
 
@@ -106,6 +116,7 @@
         .artigo-destaque h2 {
             color: #f1c40f;
         }
+
         .caixa-receita {
             background-color: rgba(0, 0, 0, 0.25);
             padding: 16px 20px;
@@ -125,7 +136,7 @@
             font-size: 1.1rem;
         }
 
-        .caixa-receita ul, 
+        .caixa-receita ul,
         .caixa-receita ol {
             margin: 0 0 16px 0;
             padding-left: 20px;
@@ -135,6 +146,7 @@
             margin-bottom: 6px;
         }
 
+        /* Botões */
         .botoes-reacao {
             display: flex;
             gap: 10px;
@@ -159,10 +171,13 @@
             background-color: rgba(255, 255, 255, 0.25);
             transform: scale(1.05);
         }
-         (max-width: 768px) {
+
+        /* Responsividade */
+        @media (max-width: 768px) {
             article {
                 flex-direction: column;
             }
+
             img {
                 width: 100%;
                 height: 200px;
@@ -170,6 +185,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -178,19 +194,29 @@
     </header>
 
     <main>
+
         <article class="artigo-destaque">
-            <img src="jose.jpg" alt="Brownie do blog">
-            
+
+            <img src="jose.jpg" alt="Brownie de Air Fryer">
+
             <div class="content">
+
+                <span class="badge-destaque">Receita em destaque</span>
+
                 <h2>Brownie de Air Fryer Imperdível</h2>
+
                 <p class="artigo-autor">Por: José C.</p>
-                
+
                 <p>
-                    Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de culinária e curiosidades da área de gastronomia pessoal.
+                    Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas
+                    de culinária e curiosidades da área de gastronomia pessoal.
                     E hoje vou ensinar a receita do meu delicioso brownie de Air Fryer!
                 </p>
+
                 <div class="caixa-receita">
+
                     <h3>🍫 Ingredientes</h3>
+
                     <ul>
                         <li>2 colheres de sopa de manteiga derretida</li>
                         <li>2 colheres de sopa de açúcar</li>
@@ -202,64 +228,359 @@
                     </ul>
 
                     <h3>🥣 Modo de Preparo</h3>
+
                     <ol>
-                        <li>Preaqueça a air fryer a 160°C por 3 minutos.</li>
-                        <li>No próprio potinho que vai à air fryer, misture a manteiga derretida com o açúcar.</li>
-                        <li>Adicione a gema e mexa até incorporar bem.</li>
-                        <li>Junte o cacau em pó, a farinha de trigo e o sal, misturando até obter uma massa homogênea.</li>
-                        <li>Afunde os pedaços de chocolate no meio da massa.</li>
-                        <li>Asse a 160°C por 8 a 10 minutos (o topo deve estar firme e o centro levemente cremoso).</li>
+                        <li>Preaqueça a Air Fryer a 160°C por 3 minutos.</li>
+
+                        <li>
+                            No próprio potinho que vai à Air Fryer,
+                            misture a manteiga derretida com o açúcar.
+                        </li>
+
+                        <li>
+                            Adicione a gema e mexa até incorporar bem.
+                        </li>
+
+                        <li>
+                            Junte o cacau em pó, a farinha de trigo e o sal,
+                            misturando até obter uma massa homogênea.
+                        </li>
+
+                        <li>
+                            Afunde os pedaços de chocolate no meio da massa.
+                        </li>
+
+                        <li>
+                            Asse a 160°C por 8 a 10 minutos.
+                            O topo deve estar firme e o centro levemente cremoso.
+                        </li>
                     </ol>
+
                 </div>
 
                 <div class="botoes-reacao">
                     <button>🧁 <span>0</span></button>
                     <button>🍪 <span>0</span></button>
                 </div>
+
             </div>
         </article>
+
         <article>
-            <img src="jo.jpg" alt="Bolo individual na air fryer">
-            
+
+            <img src="jo.jpg" alt="Bolo individual feito na Air Fryer">
+
             <div class="content">
+
                 <h2>Bolo Individual na Air Fryer</h2>
+
                 <p class="artigo-autor">Por: José C.</p>
+
                 <p>
-                    Meu segundo post aqui no blog! Hoje irei ensinar a minha receita prática de bolo individual feito na Air Fryer. É perfeita para matar a vontade de um docinho de forma rápida!
+                    Meu segundo post aqui no blog! Hoje irei ensinar a minha
+                    receita prática de bolo individual feito na Air Fryer.
+                    É perfeita para matar a vontade de um docinho de forma rápida!
                 </p>
+
                 <div class="caixa-receita">
+
                     <h3>🍰 Ingredientes</h3>
+
                     <ul>
                         <li>3 colheres de sopa de farinha de trigo</li>
                         <li>2 colheres de sopa de açúcar</li>
-                        <li>1 colher de sopa de cacau em pó (50% ou 100%)</li>
+                        <li>1 colher de sopa de cacau em pó</li>
                         <li>1/2 colher de chá de fermento químico em pó</li>
                         <li>1 pitada de sal</li>
                         <li>3 colheres de sopa de leite</li>
-                        <li>1 colher de sopa de óleo (ou manteiga derretida)</li>
+                        <li>1 colher de sopa de óleo ou manteiga derretida</li>
                         <li>1/2 colher de chá de essência de baunilha (opcional)</li>
                     </ul>
 
                     <h3>🥣 Modo de Preparo</h3>
+
                     <ol>
-                        <li><strong>Misture os secos:</strong> Em uma tigela pequena, junte a farinha, o açúcar, o cacau, o fermento e a pitada de sal. Misture bem com um garfo.</li>
-                        <li><strong>Adicione os líquidos:</strong> Adicione o leite, o óleo e a baunilha à mistura seca. Mexa suavemente até obter uma massa lisa e homogênea.</li>
-                        <li><strong>Prepare a forma:</strong> Unte levemente uma forminha individual de alumínio com óleo e polvilhe cacau em pó. Despeje a massa na forminha, ocupando no máximo 2/3 da altura para evitar vazamentos ao crescer.</li>
-                        <li><strong>Asse na Air Fryer:</strong> Pré-aqueça a Air Fryer a 160°C por 3 minutos. Acomode a forminha no cesto e asse a 160°C por 10 a 12 minutos.</li>
-                        <li><strong>Teste do palito:</strong> Espete um palito no centro do bolo; se sair limpo, está pronto. Deixe amornar por alguns minutos antes de servir.</li>
+
+                        <li>
+                            <strong>Misture os secos:</strong>
+                            Em uma tigela pequena, junte a farinha,
+                            o açúcar, o cacau, o fermento e o sal.
+                            Misture bem.
+                        </li>
+
+                        <li>
+                            <strong>Adicione os líquidos:</strong>
+                            Acrescente o leite, o óleo e a baunilha.
+                            Misture até obter uma massa lisa e homogênea.
+                        </li>
+
+                        <li>
+                            <strong>Prepare a forma:</strong>
+                            Unte levemente uma forminha individual
+                            e despeje a massa, preenchendo no máximo 2/3 da forma.
+                        </li>
+
+                        <li>
+                            <strong>Asse na Air Fryer:</strong>
+                            Preaqueça a Air Fryer a 160°C por 3 minutos.
+                            Asse por aproximadamente 10 a 12 minutos.
+                        </li>
+
+                        <li>
+                            <strong>Teste do palito:</strong>
+                            Espete um palito no centro do bolo.
+                            Se sair limpo, está pronto.
+                        </li>
+
                     </ol>
+
                 </div>
-                
+
                 <div class="botoes-reacao">
                     <button>🧁 <span>0</span></button>
                     <button>🍪 <span>0</span></button>
                 </div>
+
             </div>
-             </article>
-    </main>
+        </article>
+
+        <article>
+
+            <img
+                src="coberturajose.jpeg"
+                alt="Cobertura de chocolate para bolos"
+            >
+
             <div class="content">
-                <h2>cobertura de chocolate para bolo</h2>
-    <script src="script.js" ></script>
+
+                <h2>Cobertura de Chocolate</h2>
+
+                <p class="artigo-autor">Por: José C.</p>
+
+                <p>
+                    Meu terceiro post! Seja bem-vindo e fique à vontade
+                    para experimentar esta receita simples de cobertura
+                    de chocolate. Ela combina muito bem com bolos,
+                    brownies e cupcakes.
+                </p>
+
+                <div class="caixa-receita">
+
+                    <h3>🍫 Ingredientes da Cobertura</h3>
+
+                    <ul>
+                        <li>4 colheres de sopa de leite</li>
+                        <li>3 colheres de sopa de açúcar</li>
+                        <li>2 colheres de sopa de chocolate em pó ou cacau em pó</li>
+                        <li>1 colher de sopa de manteiga</li>
+                        <li>1/2 caixinha de creme de leite (opcional)</li>
+                    </ul>
+
+                    <h3>🥣 Modo de Preparo</h3>
+
+                    <ol>
+
+                        <li>
+                            Em uma panela pequena, coloque o leite,
+                            o açúcar, o chocolate em pó e a manteiga.
+                        </li>
+
+                        <li>
+                            Misture bem os ingredientes ainda com a panela desligada.
+                        </li>
+
+                        <li>
+                            Leve ao fogo baixo, mexendo constantemente
+                            para não deixar a mistura grudar no fundo.
+                        </li>
+
+                        <li>
+                            Cozinhe por aproximadamente 3 a 5 minutos,
+                            até a cobertura começar a engrossar.
+                        </li>
+
+                        <li>
+                            Desligue o fogo e, se quiser uma cobertura
+                            mais cremosa, acrescente o creme de leite.
+                            Misture bem.
+                        </li>
+
+                        <li>
+                            Espere alguns minutos e despeje a cobertura
+                            sobre o bolo ou brownie.
+                        </li>
+
+                    </ol>
+
+                </div>
+
+                <div class="botoes-reacao">
+                    <button>🧁 <span>0</span></button>
+                    <button>🍪 <span>0</span></button>
+                </div>
+
+            </div>
+        </article>
+
+        <article>
+
+            <img
+                src="maracuja.jpeg"
+                alt="Cobertura de maracuja para bolos"
+            >
+
+            <div class="content">
+
+                <h2>Cobertura de maracuja</h2>
+
+                <p class="artigo-autor">Por: José C.</p>
+
+                <p>
+                    Meu quarto post! Seja bem-vindo e fique à vontade
+                    para experimentar esta receita simples de cobertura
+                    de maracuja. Ela combina muito bem com bolos,
+                    brownies e cupcakes de chocolate.
+                </p>
+
+                <div class="caixa-receita">
+
+                    <h3>🍫 Ingredientes da Cobertura</h3>
+
+                    <ul>
+                        <li>4 colheres de sopa de leite</li>
+                        <li>3 colheres de sopa de açúcar</li>
+                        <li>4 colheres de sopa de polpa de maracuja</li>
+                        <li>1 colher de sopa de manteiga</li>
+                        <li>1/2 latas de creme de leite fresco</li>
+                    </ul>
+
+                    <h3>🥣 Modo de Preparo</h3>
+
+                    <ol>
+
+                        <li>
+                            Em uma panela pequena, coloque o leite,
+                            o açúcar, a polpa e a manteiga.
+                        </li>
+
+                        <li>
+                            Misture bem os ingredientes ainda com a panela desligada.
+                        </li>
+
+                        <li>
+                            Leve ao fogo baixo, mexendo constantemente
+                            para não deixar a mistura grudar no fundo.
+                        </li>
+
+                        <li>
+                            Cozinhe por aproximadamente 3 a 5 minutos,
+                            até a cobertura começar a engrossar.
+                        </li>
+
+                        <li>
+                            Desligue o fogo e, se quiser uma cobertura
+                            mais cremosa, acrescente o creme de leite.
+                            Misture bem.
+                        </li>
+
+                        <li>
+                            Espere alguns minutos e despeje a cobertura
+                            sobre o bolo ou brownie.
+                        </li>
+
+                    </ol>
+
+                </div>
+
+                <div class="botoes-reacao">
+                    <button>🧁 <span>0</span></button>
+                    <button>🍪 <span>0</span></button>
+                </div>
+
+            </div>
+        </article>
+
+        <article>
+
+            <img
+                src="red.jpeg"
+                alt="Cobertura de maracuja para bolos"
+            >
+
+            <div class="content">
+
+                <h2>Cobertura de maracuja</h2>
+
+                <p class="artigo-autor">Por: José C.</p>
+
+                <p>
+                    Meu quarto post! Seja bem-vindo e fique à vontade
+                    para experimentar esta receita simples de cobertura
+                    de maracuja. Ela combina muito bem com bolos,
+                    brownies e cupcakes de chocolate.
+                </p>
+
+                <div class="caixa-receita">
+
+                    <h3>🍫 Ingredientes da Cobertura</h3>
+
+                    <ul>
+                        <li>4 colheres de sopa de leite</li>
+                        <li>3 colheres de sopa de açúcar</li>
+                        <li>4 colheres de sopa de polpa de maracuja</li>
+                        <li>1 colher de sopa de manteiga</li>
+                        <li>1/2 latas de creme de leite fresco</li>
+                    </ul>
+
+                    <h3>🥣 Modo de Preparo</h3>
+
+                    <ol>
+
+                        <li>
+                            Em uma panela pequena, coloque o leite,
+                            o açúcar, a polpa e a manteiga.
+                        </li>
+
+                        <li>
+                            Misture bem os ingredientes ainda com a panela desligada.
+                        </li>
+
+                        <li>
+                            Leve ao fogo baixo, mexendo constantemente
+                            para não deixar a mistura grudar no fundo.
+                        </li>
+
+                        <li>
+                            Cozinhe por aproximadamente 3 a 5 minutos,
+                            até a cobertura começar a engrossar.
+                        </li>
+
+                        <li>
+                            Desligue o fogo e, se quiser uma cobertura
+                            mais cremosa, acrescente o creme de leite.
+                            Misture bem.
+                        </li>
+
+                        <li>
+                            Espere alguns minutos e despeje a cobertura
+                            sobre o bolo ou brownie.
+                        </li>
+
+                    </ol>
+
+                </div>
+
+                <div class="botoes-reacao">
+                    <button>🧁 <span>0</span></button>
+                    <button>🍪 <span>0</span></button>
+                </div>
+
+            </div>
+        </article>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
