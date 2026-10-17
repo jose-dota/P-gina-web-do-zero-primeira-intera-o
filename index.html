@@ -38,27 +38,25 @@
             opacity: 0.8;
         }
 
+        /* 2 colunas ocupando a tela inteira */
         main {
-            max-width: 900px;
+            max-width: 100%;
             margin: 30px auto;
-            padding: 0 16px;
-            display: flex;
-            flex-direction: column;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
         }
 
+        /* Layout em coluna para eliminar buracos vazios */
         article {
             background-color: #3b1a0d;
             border-radius: 12px;
             padding: 24px;
             display: flex;
-            border:1px solid #4b2a5a;
-            margin: 16px;
-            gap: 16x;
-            padding: 16px;
-            flex: 1 1 25%;
-            gap: 24px;
-            align-items: flex-start;
+            flex-direction: column;
+            border: 1px solid #4b2a5a;
+            margin: 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             transition: transform 0.2s ease;
         }
@@ -67,16 +65,19 @@
             transform: translateY(-3px);
         }
 
+        /* Imagem no topo do cartão */
         img {
-            width: 260px;
+            width: 100%;
             height: 260px;
             object-fit: cover;
             border-radius: 8px;
-            flex-shrink: 0;
+            margin-bottom: 16px;
         }
 
         .content {
             flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .content h2 {
@@ -115,18 +116,22 @@
             margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            align-self: flex-start;
         }
 
         .artigo-destaque h2 {
             color: #f1c40f;
         }
 
+        /* A caixa de receita expande e ocupa todo o espaço em branco do post */
         .caixa-receita {
             background-color: rgba(0, 0, 0, 0.25);
-            padding: 16px 20px;
+            padding: 20px;
             border-radius: 8px;
             margin: 16px 0;
             border-left: 4px solid #f39c12;
+            flex: 1;
+            width: 100%;
         }
 
         .artigo-destaque .caixa-receita {
@@ -150,10 +155,12 @@
             margin-bottom: 6px;
         }
 
+        /* Botões alinhados sempre na parte inferior */
         .botoes-reacao {
             display: flex;
             gap: 10px;
-            margin-top: 16px;
+            margin-top: auto;
+            padding-top: 10px;
         }
 
         button {
@@ -176,13 +183,8 @@
         }
 
         @media (max-width: 768px) {
-            article {
-                flex-direction: column;
-            }
-
-            img {
-                width: 100%;
-                height: 200px;
+            main {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -467,7 +469,7 @@
 
                         <li>
                             Misture bem os ingredientes ainda com a panela desligada.
-                        </li
+                        </li>
                         <li>
                             Desligue o fogo e, se quiser uma cobertura
                             mais cremosa, acrescente o creme de leite.
@@ -495,7 +497,7 @@
 
             <img
                 src="red.jpeg"
-                alt="Cobertura de maracuja para bolos"
+                alt="Cobertura Red Velvet"
             >
 
             <div class="content">
@@ -558,10 +560,10 @@
 
             </div>
         </article>
-        
-               <article class="artigo-destaque">
 
-            <img src="agradecimento.jpg">
+        <article class="artigo-destaque">
+
+            <img src="agradecimento.jpg" alt="Agradecimento">
 
             <div class="content">
 
@@ -582,7 +584,7 @@
                 </div>
 
             </div>
-        </article
+        </article>
 
     </main>
 
