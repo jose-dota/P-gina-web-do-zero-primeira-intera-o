@@ -7,7 +7,6 @@
 
     <title>Blog de Culinária - Receitas Pessoais</title>
     <link rel="stylesheet" href="style.css">
-<head>
 
     <style>
         * {
@@ -16,29 +15,31 @@
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #241007;
-            color: #ffffff;
+            background-color: #faf6f2;
+            color: #2c1608;
             margin: 0;
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         header {
-            background-color: #170904;
-            color: #ffffff;
+            background-color: #f0e4d7;
+            color: #2c1608;
             text-align: center;
             padding: 30px 20px;
-            border-bottom: 2px solid #3d1b0d;
+            border-bottom: 2px solid #d9c2ab;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         header h1 {
             margin: 0 0 10px 0;
             font-size: 2.2rem;
-            color: #f39c12;
+            color: #d35400;
         }
 
         header p {
             margin: 0;
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         main {
@@ -56,11 +57,14 @@
             align-items: center;
             text-align: center;
             justify-content: center;
-            border: 1px solid #582503;
+            background-color: #ffffff;
+            border: 1px solid #e0cbb5;
+            border-radius: 10px;
             margin: 16px;
             gap: 16px;
             padding: 16px;
             flex: 1 1 25%;
+            transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
         }
 
         article:hover {
@@ -89,18 +93,16 @@
 
         .artigo-autor {
             font-weight: 600;
-            color: #e0a96d;
+            color: #9c5a25;
             margin-top: 0;
             margin-bottom: 16px;
             font-size: 0.9rem;
         }
 
         article.artigo-destaque {
-            border: 2px solid #f1c40f;
-            box-shadow: 0 0 20px rgba(241, 196, 15, 0.25);
-            background: linear-gradient(145deg,
-                    #4a2110 0%,
-                    #2e1308 100%);
+            border: 2px solid #e67e22;
+            box-shadow: 0 4px 20px rgba(230, 126, 34, 0.15);
+            background: linear-gradient(145deg, #fffaf3 0%, #f7ead9 100%);
             position: relative;
         }
 
@@ -119,27 +121,29 @@
         }
 
         .artigo-destaque h2 {
-            color: #f1c40f;
+            color: #b96700;
         }
 
         .caixa-receita {
-            background-color: rgba(0, 0, 0, 0.25);
+            background-color: rgba(0, 0, 0, 0.04);
             padding: 20px;
             border-radius: 8px;
             margin: 16px 0;
-            border-left: 4px solid #f39c12;
+            border-left: 4px solid #e67e22;
             flex: 1;
             width: 100%;
+            text-align: left;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .artigo-destaque .caixa-receita {
-            border-left-color: #f1c40f;
+            border-left-color: #d4ac0d;
         }
 
         .caixa-receita h3 {
             margin-top: 12px;
             margin-bottom: 8px;
-            color: #f39c12;
+            color: #d35400;
             font-size: 1.1rem;
         }
 
@@ -160,10 +164,10 @@
             padding-top: 10px;
         }
 
-        button {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
+        .botoes-reacao button {
+            background-color: rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            color: #2c1608;
             padding: 8px 16px;
             border-radius: 20px;
             cursor: pointer;
@@ -174,9 +178,108 @@
             transition: all 0.2s ease;
         }
 
-        button:hover {
-            background-color: rgba(255, 255, 255, 0.25);
+        .botoes-reacao button:hover {
+            background-color: rgba(0, 0, 0, 0.12);
             transform: scale(1.05);
+        }
+
+        body.dark-mode {
+            background-color: #241007;
+            color: #ffffff;
+        }
+
+        body.dark-mode header {
+            background-color: #170904;
+            color: #ffffff;
+            border-bottom-color: #3d1b0d;
+        }
+
+        body.dark-mode header h1 {
+            color: #f39c12;
+        }
+
+        body.dark-mode article {
+            background-color: transparent;
+            border-color: #582503;
+        }
+
+        body.dark-mode .artigo-autor {
+            color: #e0a96d;
+        }
+
+        body.dark-mode article.artigo-destaque {
+            border-color: #f1c40f;
+            box-shadow: 0 0 20px rgba(241, 196, 15, 0.25);
+            background: linear-gradient(145deg, #4a2110 0%, #2e1308 100%);
+        }
+
+        body.dark-mode .artigo-destaque h2 {
+            color: #f1c40f;
+        }
+
+        body.dark-mode .caixa-receita {
+            background-color: rgba(0, 0, 0, 0.25);
+            border-left-color: #f39c12;
+        }
+
+        body.dark-mode .artigo-destaque .caixa-receita {
+            border-left-color: #f1c40f;
+        }
+
+        body.dark-mode .caixa-receita h3 {
+            color: #f39c12;
+        }
+
+        body.dark-mode .botoes-reacao button {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        body.dark-mode .botoes-reacao button:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .theme-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 52px;
+            height: 52px;
+            padding: 0;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid #526649;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.08);
+        }
+
+        .theme-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #394733 50%, #ffffff 50%);
+            border: 1px solid #526649;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        body.dark-mode .theme-btn {
+            background-color: #1f261d;
+            border-color: #8da383;
+        }
+
+        body.dark-mode .theme-icon {
+            background: linear-gradient(90deg, #ffffff 50%, #394733 50%);
+            border-color: #8da383;
         }
 
         @media (max-width: 768px) {
@@ -185,6 +288,7 @@
             }
         }
     </style>
+</head>
 
 <body>
 
@@ -574,9 +678,11 @@
             </div>
         </article>
 
-        <button class="btn-tema-escuro">💡</button>
-
     </main>
+
+    <button id="theme-toggle-btn" class="theme-btn" aria-label="Alternar tema claro e escuro">
+        <div class="theme-icon"></div>
+    </button>
 
     <script src="script.js"></script>
 
